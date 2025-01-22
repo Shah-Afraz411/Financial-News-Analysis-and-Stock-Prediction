@@ -1,6 +1,6 @@
 # Financial News Analysis and Stock Prediction
 
-![Financial Insights](https://example.com/financial-insights.png "Financial News Analysis")
+![Financial Insights](images/stock1.jpg "Financial News Analysis")
 
 
 
@@ -15,7 +15,7 @@ This project analyzes financial news to forecast stock price movements by levera
 2. [Project Structure](#project-structure)
 3. [Requirements](#requirements)
 4. [Dataset](#dataset)
-5. - [Methodology](#methodology)
+5. [Methodology](#methodology)
     - [Data Preprocessing](#data-preprocessing)
     - [Sentiment Analysis](#sentiment-analysis)
     - [Feature Engineering](#feature-engineering)
@@ -64,7 +64,29 @@ To replicate this analysis, you will need the following:
   - sklearn
   - keras/tensorflow (if using deep learning models)
 
-## 4.  Methodology
+## 4. Dataset
+
+This project utilizes three distinct datasets:
+
+1. **Financial News Dataset:** 
+    - **Source:** 
+    - **Description:** This dataset contains financial news articles with the following attributes:
+        - **Headlines:** Titles of financial news articles.
+        - **Date:** Publication date of the news article.
+        - **Description:** A detailed text description of the news article.
+
+2. **Finance Online Dataset:**
+    - **Source:** Downloaded within the project using `!pip install yfinance`
+    - **Description:** This dataset is sourced from the `yfinance` library, providing historical stock price data for various companies.
+
+3. **Top 50 American Stock Companies Dataset:**
+    - **Source:** 
+    - **Description:** This CSV file contains a list of the top 50 American stock companies with two columns:
+        - **Companies:** Names of the top 50 companies.
+        - **Tickers:** Stock tickers corresponding to each company. 
+
+This combination of datasets allows for a comprehensive analysis of the relationship between financial news sentiment and stock price movements.
+## 5. Methodology
 
 ### Data Preprocessing
 
@@ -103,6 +125,30 @@ To replicate this analysis, you will need the following:
 
 
 ## Exploratory Data Analysis (EDA)
+**Exploratory Data Analysis (EDA)** is a crucial step to better understand the dataset and prepare it for further analysis. In this project, we perform the following tasks during EDA:
+
+1. **Data Inspection:**
+   - Load the dataset and inspect its structure using basic pandas functions:
+     - `df.info()` provides the dataset's information, including the number of rows, columns, and data types.
+     - `df.head()` shows the first 5 rows of the dataset to get a preview of the data.
+     - `df.columns` lists all column names.
+   
+2. **Handling Missing Values:**
+   - If the **Date** or **Headline** of any article is missing, remove those articles.
+   - If the **Description** is missing, replace the missing description with an empty string.
+
+3. **Removing Duplicates:**
+   - Remove any duplicate entries in the dataset to avoid skewed analysis.
+
+4. **Unique Articles:**
+   - Calculate the number of **unique articles** based on the **Headlines** column to ensure that articles are not repeated.
+
+5. **Trend Analysis:**
+   - Visualize the number of articles published on each day in 2020 to understand trends using **matplotlib.pyplot**.
+
+6. **Word Frequency Analysis:**
+   - Analyze the most frequent words in the **Description** column.
+   - Generate a **WordCloud** to visualize the most frequent words and understand the common topics in the news articles.
 
 
 
@@ -115,7 +161,7 @@ To replicate this analysis, you will need the following:
 
 
 
-This README file explains each section of the notebook clearly while adhering to standard README formatting practices.
+This README file clearly explains each section of the notebook while adhering to standard README formatting practices.
 
 
 Install the required libraries using the following command:
